@@ -59,6 +59,8 @@ export const getAvailableInstructors = () => {
     const instructorArray = instructors.filter(instructor => !students.some(student => student.instructorId === instructor.id))
     return instructorArray;
 }
+//iterate through the instructors array and filter the instructor whose id is equal to the instructor id in the student array.
+//we want the opposite of the matching results so we use the not equal opperator !.
 
 
 
