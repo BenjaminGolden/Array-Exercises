@@ -70,11 +70,15 @@ export const getAvailableInstructors = () => {
 // HINT: In addition to the `filter` method, you might also look up the `some` method
 
 export const getStudentsByLanguage = (language) => {
-//    let studentsLanguageArray = students.some(student => student.languages === language)
-//    console.log(studentsLanguageArray);
-        const studentsThatMatchLanguage = students.filter(student => student.languages.some(studentLanguage => studentLanguage === language))
-            return studentsThatMatchLanguage;
+    const studentsThatMatchLanguage = students.filter(student => student.languages.some(studentLanguage => studentLanguage === language))
+    console.log(studentsThatMatchLanguage);
+        return studentsThatMatchLanguage;
 }
+//go into the students array and look at the languages a student knows
+//then we want to look and see if some language matches language that was passed in to the parameter of the function. 
+//if so, return the students that match that language. 
+//we have to do this becauase student.languages is an array of strings and the parameter is a string, the two can never be equal.
+//since .some evaluates to true or false it can search string to string and find the correct matches.
    
 
 
@@ -86,3 +90,11 @@ export const getStudentsByLanguage = (language) => {
 // It should accept an array of strings as a parameter named `languages`
 // It should return an array of students who know ALL of the given languages
 // Ex: getStudentsByLanguages(["Javascript", "C#"])
+
+//this needs to except an array of strings as a parameter. it needs to filter the students to exactly match the languages that are passed in to the arguement. this worked on the previous example because we were only looking for one language. How do we modify this function to only return exact matches on multiple parameters?
+
+export const getStudentsByLanguages = ([languages]) => {
+    const studentsThatMatchLanguages = students.filter(student => student.languages.some(studentLanguage => studentLanguage === languages))
+    console.log(studentsThatMatchLanguages);
+        return studentsThatMatchLanguages;
+}

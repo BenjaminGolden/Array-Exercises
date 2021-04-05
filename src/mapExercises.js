@@ -11,7 +11,6 @@ export const getStudentNames = () => {
       let studentArray = students.map(student => {
         return `${student.firstName} ${student.lastName}`
       })
-      console.log(studentArray);
       return studentArray
 }
 
@@ -30,6 +29,5 @@ export const StudentList = () => {
       let HTMLString = students.map(student => {
         return  `<div><h1>${student.firstName} ${student.lastName}</h1><h2>Cohort ${student.cohort}</h2></div>`
       })
-      console.log(HTMLString)
       return HTMLString.join("");
 }
